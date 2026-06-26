@@ -1,5 +1,5 @@
 import logoMap from "../data/technologyLogos";
-import { H2 } from "./UI/Header";
+import { H2, H3 } from "./UI/Header";
 import Section from "./UI/Section";
 
 const skillGroups = [
@@ -61,9 +61,7 @@ export default function Skills() {
             key={group.title}
             className="relative rounded-2xl border border-slate-200 p-6 transition"
           >
-            <h3 className="mb-5 text-2xl font-bold text-slate-950">
-              {group.title}
-            </h3>
+            <H3 className="mb-5">{group.title}</H3>
 
             <ul className="flex flex-wrap gap-10">
               {Object.entries(group.skills).map(([skill, logo]) => (
