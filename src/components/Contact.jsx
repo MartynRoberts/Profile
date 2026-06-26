@@ -90,7 +90,7 @@ export default function Contact() {
 
         {status === "success" && (
           <div className="inset-0 flex flex-col items-center justify-center bg-white/90 text-center p-6">
-            <h2 className="text-2xl font-bold text-green-600">
+            <h2 className="text-xl font-bold text-green-600">
               Message sent successfully
             </h2>
 
@@ -98,9 +98,36 @@ export default function Contact() {
               Thanks — I’ll get back to you soon.
             </p>
 
+            {/* Animated tick */}
+            <div className="w-10 h-10 mt-4">
+              <svg viewBox="0 0 52 52" className="w-full h-full">
+                <circle
+                  cx="26"
+                  cy="26"
+                  r="25"
+                  fill="none"
+                  stroke="#22c55e"
+                  strokeWidth="3"
+                  className="opacity-0 animate-fade-in"
+                />
+
+                <path
+                  d="M14 27 L22 35 L38 18"
+                  fill="none"
+                  stroke="#22c55e"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeDasharray="50"
+                  strokeDashoffset="50"
+                  className="animate-draw"
+                />
+              </svg>
+            </div>
+
             <button
               onClick={() => setStatus("idle")}
-              className="mt-6 underline text-blue-600"
+              className="mt-6 underline hover:cursor-pointer"
             >
               Send another message
             </button>
