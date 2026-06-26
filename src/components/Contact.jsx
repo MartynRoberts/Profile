@@ -5,6 +5,9 @@ import Section from "./UI/Section";
 import { useState } from "react";
 
 export default function Contact() {
+  const [status, setStatus] = useState("idle");
+  // "idle" | "loading" | "success" | "error"
+
   async function handleSubmit(e) {
     e.preventDefault();
 
@@ -25,21 +28,10 @@ export default function Contact() {
     const result = await response.json();
 
     if (result.success) {
-      alert("Message sent");
-    }
-
-    if (response.status === 422) {
-      return response;
-    }
-
-    if (!response.ok) {
-      throw json(
-        {
-          message:
-            "Could not send message at this time. Please try again later.",
-        },
-        { status: 500 },
-      );
+      setStatus("success");
+      e.target.reset();
+    } else {
+      setStatus("error");
     }
   }
 
@@ -54,8 +46,8 @@ export default function Contact() {
           </p>
         </div>
 
-        <form onSubmit={handleSubmit}>
-          <div className="space-y-5">
+        {status !== "success" && (
+          <form onSubmit={handleSubmit} className="space-y-5">
             <Input type="text" id="name" label="Name" placeholder="Your name" />
             <Input
               type="email"
@@ -79,14 +71,41 @@ export default function Contact() {
                 required
               ></textarea>
             </div>
+
             <button
               type="submit"
+              disabled={status === "loading"}
               className="w-full rounded-xl bg-black px-6 py-3 font-semibold text-white transition hover:underline focus:outline-none focus:ring-4 focus:ring-blue-400/30 hover:cursor-pointer"
             >
-              Send Message
+              {status === "loading" ? "Sending..." : "Send message"}
+            </button>
+
+            {status === "error" && (
+              <p className="text-red-500">
+                Something went wrong. Please try again.
+              </p>
+            )}
+          </form>
+        )}
+
+        {status === "success" && (
+          <div className="inset-0 flex flex-col items-center justify-center bg-white/90 text-center p-6">
+            <h2 className="text-2xl font-bold text-green-600">
+              Message sent successfully
+            </h2>
+
+            <p className="mt-2 text-slate-600">
+              Thanks — I’ll get back to you soon.
+            </p>
+
+            <button
+              onClick={() => setStatus("idle")}
+              className="mt-6 underline text-blue-600"
+            >
+              Send another message
             </button>
           </div>
-        </form>
+        )}
       </div>
     </Section>
   );

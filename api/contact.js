@@ -13,7 +13,7 @@ export default async function handler(req, res) {
     await resend.emails.send({
       from: "Contact Form <onboarding@resend.dev>",
       to: process.env.CONTACT_EMAIL,
-      subject: `Website message from ${name}`,
+      subject: `Profile website contact from ${name}`,
       text: `
 Name: ${name}
 Email: ${email}
