@@ -2,7 +2,47 @@ import Input from "./UI/Input";
 import { H2 } from "./UI/Header";
 import Section from "./UI/Section";
 
+import { useState } from "react";
+
 export default function Contact() {
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: formData.get("name"),
+        email: formData.get("email"),
+        message: formData.get("message"),
+      }),
+    });
+
+    const result = await response.json();
+
+    if (result.success) {
+      alert("Message sent");
+    }
+
+    if (response.status === 422) {
+      return response;
+    }
+
+    if (!response.ok) {
+      throw json(
+        {
+          message:
+            "Could not send message at this time. Please try again later.",
+        },
+        { status: 500 },
+      );
+    }
+  }
+
   return (
     <Section id="contact">
       <H2 className="mb-12">Contact</H2>
@@ -14,7 +54,7 @@ export default function Contact() {
           </p>
         </div>
 
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="space-y-5">
             <Input type="text" id="name" label="Name" placeholder="Your name" />
             <Input
@@ -45,10 +85,6 @@ export default function Contact() {
             >
               Send Message
             </button>
-            <h1>
-              NEED TO PROCESS THE
-              FORM!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            </h1>
           </div>
         </form>
       </div>
