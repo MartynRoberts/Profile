@@ -8,7 +8,7 @@ export default function Header() {
         <h1 className="font-serif text-2xl font-bold leading-tight text-slate-900 text-center sm:text-left">
           Martyn Roberts
           <span className="font-sans-serif block text-sm font-medium tracking-wide text-slate-500">
-            Frontend Developer
+            Front-end Developer
           </span>
         </h1>
 

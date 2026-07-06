@@ -5,7 +5,7 @@ import Section from "./UI/Section";
 const roles = [
   {
     logo: "logo_jd.jpg",
-    title: "Senior Front End Developer",
+    title: "Senior Front-End Developer",
     company: "JD Outdoor",
     dates: "Jul 2023 - 2026",
     duration: "3 yrs",
@@ -19,7 +19,7 @@ const roles = [
   },
   {
     logo: "logo_blacks.jpg",
-    title: "Front End Web Developer",
+    title: "Front-End Web Developer",
     company: "Blacks Outdoor Retail Limited",
     dates: "Aug 2015 - Sep 2024",
     duration: "9 yrs 2 mos",
@@ -33,7 +33,7 @@ const roles = [
   },
   {
     logo: "logo_ultimate_outdoors.jpg",
-    title: "Front End Web Developer",
+    title: "Front-End Web Developer",
     company: "Ultimate Outdoors",
     dates: "Oct 2014 - Sep 2024",
     duration: "10 yrs",
@@ -46,7 +46,7 @@ const roles = [
   },
   {
     logo: "logo_bank.png",
-    title: "Front End Web Developer",
+    title: "Front-End Web Developer",
     company: "BANK Fashion",
     dates: "Nov 2013 - Oct 2014",
     duration: "1 yr",
@@ -65,7 +65,7 @@ const roles = [
     duration: "2 yrs 5 mos",
     location: "Ramsbottom",
     details: [
-      "Provided web design and development services to various clients both directly and alongside a graphic designer.",
+      "Provided web design and development services to various clients both independently and alongside a graphic designer.",
       "Developed websites for a number of small businesses both in the UK and New Zealand.",
     ],
     technologies: [

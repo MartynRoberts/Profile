@@ -38,16 +38,15 @@ export default function About() {
           wildlife cameras.
         </p>
         <p>
-          I have a track record of delivering results and was the trusted
-          backbone of a successful ecommerce front-end development team for 10+
-          years (with the references to back it up).
+          I was the trusted backbone of a successful ecommerce front-end
+          development team for 10+ years (with the references to back it up) and
+          have a track record of delivering results.
         </p>
         <p>
-          If you are looking for someone that takes pride in the quality of
-          their finished product, is a strong communicator, professional and
-          easy going (we've all worked with developers who like to bring a{" "}
-          <i>lot</i> of drama) then I might just be the new team member you're
-          looking for.
+          If you are looking for someone who takes pride in the quality of their
+          finished product, is a strong communicator, professional, and
+          easy-going, then I might just be the new team member you're looking
+          for.
         </p>
       </div>
       <img

@@ -4,7 +4,7 @@ import Section from "./UI/Section";
 
 const skillGroups = [
   {
-    title: "Frontend",
+    title: "Front-end",
     skills: {
       HTML: "html.svg",
       CSS: "css.svg",
@@ -49,7 +49,7 @@ export default function Skills() {
         <H2 className="mb-12">Skills</H2>
 
         <p className="text-lg leading-8 text-slate-600">
-          A practical mix of frontend technologies, development tools, testing
+          A practical mix of front-end technologies, development tools, testing
           experience and backend fundamentals used to build clean, responsive
           and maintainable web experiences.
         </p>
@@ -67,7 +67,7 @@ export default function Skills() {
               {Object.entries(group.skills).map(([skill, logo]) => (
                 <li
                   key={skill}
-                  className="rounded-full text-sm font-semibold flex flex-col items-center"
+                  className="rounded-full text-sm flex flex-col items-center"
                 >
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center">
                     <img
