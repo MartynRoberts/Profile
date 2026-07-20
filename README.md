@@ -5,7 +5,7 @@ https://martynroberts.dev/
 
 ---
 
-## 🧱 Tech Stack
+## Tech Stack
 
 - React
 - Vite
