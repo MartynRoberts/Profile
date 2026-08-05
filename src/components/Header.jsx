@@ -32,7 +32,6 @@ export default function Header() {
                 Skills
               </a>
             </li>
-            {/* 
             <li>
               <a
                 className="hover:underline underline-offset-4"
@@ -41,7 +40,6 @@ export default function Header() {
                 Projects
               </a>
             </li>
-            */}
             <li>
               <a className="hover:underline underline-offset-4" href="#contact">
                 Contact
