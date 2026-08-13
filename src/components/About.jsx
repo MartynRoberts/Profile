@@ -1,6 +1,7 @@
 import profileImage from "../assets/me.jpg";
 import { H2 } from "./UI/Header";
 import Section from "./UI/Section";
+import { trackEvent } from "../utils/analytics";
 
 export default function About() {
   return (
@@ -54,6 +55,7 @@ export default function About() {
         <a
           href="/martyn-roberts-cv.pdf"
           download="Martyn Roberts CV.pdf"
+          onClick={() => trackEvent("CV Downloaded", { location: "About" })}
           className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-slate-950 px-5 py-3 text-base font-semibold leading-none text-white transition hover:bg-slate-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
         >
           <svg
