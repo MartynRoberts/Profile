@@ -28,19 +28,23 @@ export default function Header() {
       className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur"
     >
       <div className="flex min-w-0 items-center justify-between gap-4 px-6 py-3 lg:py-5">
-        <h1 className="min-w-0 truncate font-serif text-xl font-light leading-tight text-slate-900 lg:text-2xl">
+        <h1 className="min-w-0 truncate font-serif text-xl font-light leading-tight lg:text-2xl">
           MartynRoberts.dev
         </h1>
 
         <button
           type="button"
           className="grid h-11 w-11 shrink-0 place-items-center rounded-lg border border-slate-300 text-slate-900 transition hover:bg-slate-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 lg:hidden"
-          aria-label={menuOpen ? "Close main navigation" : "Open main navigation"}
+          aria-label={
+            menuOpen ? "Close main navigation" : "Open main navigation"
+          }
           aria-controls="mobile-navigation"
           aria-expanded={menuOpen}
           onClick={() => setMenuOpen((open) => !open)}
         >
-          <span className="sr-only">{menuOpen ? "Close menu" : "Open menu"}</span>
+          <span className="sr-only">
+            {menuOpen ? "Close menu" : "Open menu"}
+          </span>
           <svg
             aria-hidden="true"
             viewBox="0 0 24 24"

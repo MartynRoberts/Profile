@@ -138,9 +138,7 @@ export default function Projects() {
                 <ProjectGallery media={project.media} title={project.title} />
 
                 <div className="min-w-0 flex-1">
-                  <h3 className="text-xl font-bold text-slate-950">
-                    {project.title}
-                  </h3>
+                  <h3 className="text-xl font-bold">{project.title}</h3>
                   <div className="mt-4 flex flex-wrap gap-2">
                     <a
                       href={project.link}
@@ -151,7 +149,7 @@ export default function Projects() {
                           project: project.title,
                         })
                       }
-                      className="inline-flex items-center gap-2 rounded-lg bg-slate-950 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 active:scale-[0.98] active:bg-slate-900"
+                      className="inline-flex items-center gap-2 rounded-lg bg-theme px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-theme-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-theme-dark active:scale-[0.98] active:bg-theme-dark active:text-white"
                     >
                       View live project
                       <ExternalLinkIcon />
