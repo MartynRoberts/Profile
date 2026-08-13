@@ -62,7 +62,7 @@ export default function Skills() {
         {skillGroups.map((group) => (
           <div
             key={group.title}
-            className="relative border-b border-slate-200 py-6 transition sm:rounded-2xl sm:border sm:p-6"
+            className="relative border-b border-slate-200 py-6 transition sm:rounded-xl sm:border sm:p-6"
           >
             <H3 className="mb-5">{group.title}</H3>
 

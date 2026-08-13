@@ -63,7 +63,7 @@ export default function Contact() {
                 Message
               </label>
               <textarea
-                className="w-full resize-none px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-blue-400 focus:ring-4 focus:ring-blue-400/20 text-slate-900 bg-slate-100 px-4 py-3 rounded-xl"
+                className="w-full resize-none rounded-lg bg-slate-100 px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-blue-400 focus:ring-4 focus:ring-blue-400/20"
                 id="message"
                 name="message"
                 rows="5"
@@ -75,7 +75,7 @@ export default function Contact() {
             <button
               type="submit"
               disabled={status === "loading"}
-              className="w-full rounded-xl bg-black px-6 py-3 font-semibold text-white transition hover:underline focus:outline-none focus:ring-4 focus:ring-blue-400/30 hover:cursor-pointer"
+              className="w-full rounded-lg bg-black px-6 py-3 font-semibold text-white transition hover:cursor-pointer hover:underline focus:outline-none focus:ring-4 focus:ring-blue-400/30"
             >
               {status === "loading" ? "Sending..." : "Send message"}
             </button>

@@ -65,7 +65,7 @@ export default function ProjectGallery({ media, title }) {
         </div>
 
         <div
-          className="group relative aspect-[36/25] cursor-zoom-in overflow-hidden bg-slate-950"
+          className="group relative aspect-[36/25] cursor-zoom-in overflow-hidden bg-slate-950 transition hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 active:brightness-90"
           onClick={() => setLightboxOpen(true)}
           role="button"
           tabIndex="0"
@@ -109,7 +109,7 @@ export default function ProjectGallery({ media, title }) {
                   showPrevious();
                 }}
                 aria-label={`Show previous ${title} media`}
-                className="absolute left-2 top-1/2 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full bg-slate-950/75 text-white shadow transition hover:bg-slate-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                className="absolute left-2 top-1/2 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full bg-slate-950/75 text-white shadow transition hover:bg-slate-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white active:scale-95"
               >
                 <ArrowIcon direction="previous" />
               </button>
@@ -120,7 +120,7 @@ export default function ProjectGallery({ media, title }) {
                   showNext();
                 }}
                 aria-label={`Show next ${title} media`}
-                className="absolute right-2 top-1/2 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full bg-slate-950/75 text-white shadow transition hover:bg-slate-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                className="absolute right-2 top-1/2 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full bg-slate-950/75 text-white shadow transition hover:bg-slate-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white active:scale-95"
               >
                 <ArrowIcon direction="next" />
               </button>
@@ -144,7 +144,7 @@ export default function ProjectGallery({ media, title }) {
               onClick={() => setActiveIndex(index)}
               aria-label={`Show ${item.caption || `${title} media ${index + 1}`}`}
               aria-pressed={index === activeIndex}
-              className={`relative w-24 shrink-0 snap-start overflow-hidden rounded-lg border-2 bg-slate-100 transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 ${
+              className={`relative w-24 shrink-0 snap-start overflow-hidden rounded-lg border-2 bg-slate-100 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 active:translate-y-0 active:scale-[0.97] ${
                 index === activeIndex ? "border-blue-500" : "border-transparent opacity-70 hover:opacity-100"
               }`}
             >
@@ -174,7 +174,7 @@ export default function ProjectGallery({ media, title }) {
           <button
             type="button"
             onClick={() => setLightboxOpen(false)}
-            className="absolute right-4 top-4 z-10 grid h-11 w-11 place-items-center rounded-full bg-white/15 text-2xl text-white hover:bg-white/25 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            className="absolute right-4 top-4 z-10 grid h-11 w-11 place-items-center rounded-full bg-white/15 text-2xl text-white transition hover:bg-white/25 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white active:scale-95 active:bg-white/20"
             aria-label="Close enlarged media"
           >
             ×
@@ -212,7 +212,7 @@ export default function ProjectGallery({ media, title }) {
                     type="button"
                     onClick={showPrevious}
                     aria-label={`Show previous ${title} media`}
-                    className="absolute left-1 grid h-11 w-11 place-items-center rounded-full bg-slate-950/80 text-white shadow sm:left-4"
+                    className="absolute left-1 grid h-11 w-11 place-items-center rounded-full bg-slate-950/80 text-white shadow transition hover:bg-slate-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white active:scale-95 sm:left-4"
                   >
                     <ArrowIcon direction="previous" />
                   </button>
@@ -220,7 +220,7 @@ export default function ProjectGallery({ media, title }) {
                     type="button"
                     onClick={showNext}
                     aria-label={`Show next ${title} media`}
-                    className="absolute right-1 grid h-11 w-11 place-items-center rounded-full bg-slate-950/80 text-white shadow sm:right-4"
+                    className="absolute right-1 grid h-11 w-11 place-items-center rounded-full bg-slate-950/80 text-white shadow transition hover:bg-slate-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white active:scale-95 sm:right-4"
                   >
                     <ArrowIcon direction="next" />
                   </button>
