@@ -8,6 +8,7 @@ const skillGroups = [
     skills: {
       React: "react.svg",
       "Next.js": "nextjs.svg",
+      TypeScript: "typescript.svg",
       JavaScript: "javascript.svg",
       "Tailwind CSS": "tailwind.svg",
       SASS: "sass.svg",
@@ -20,6 +21,8 @@ const skillGroups = [
     skills: {
       "Node.js": "nodejs.svg",
       Express: "express.svg",
+      PostgreSQL: "postgresql.svg",
+      Prisma: "prisma.svg",
     },
   },
   {
