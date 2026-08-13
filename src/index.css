@@ -35,6 +35,11 @@ body {
   font-family: "Inter", system-ui, sans-serif;
 }
 
+.skill-logo {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(17%) saturate(1034%)
+    hue-rotate(95deg) brightness(91%) contrast(84%);
+}
+
 html {
   scroll-behavior: smooth;
 }

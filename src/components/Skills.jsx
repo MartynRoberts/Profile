@@ -1,6 +1,49 @@
-import logoMap from "../data/technologyLogos";
+import {
+  siCss,
+  siDocker,
+  siExpress,
+  siGit,
+  siGithub,
+  siHtml5,
+  siJavascript,
+  siJest,
+  siNextdotjs,
+  siNodedotjs,
+  siNpm,
+  siPostgresql,
+  siPostman,
+  siPrisma,
+  siReact,
+  siSass,
+  siTailwindcss,
+  siTestinglibrary,
+  siTypescript,
+} from "simple-icons";
 import { H2, H3 } from "./UI/Header";
 import Section from "./UI/Section";
+import vscodeLogo from "../assets/technology_logos/vscode.svg";
+
+const technologyIcons = {
+  React: siReact,
+  "Next.js": siNextdotjs,
+  TypeScript: siTypescript,
+  JavaScript: siJavascript,
+  "Tailwind CSS": siTailwindcss,
+  SASS: siSass,
+  CSS: siCss,
+  HTML: siHtml5,
+  "Node.js": siNodedotjs,
+  Express: siExpress,
+  PostgreSQL: siPostgresql,
+  Prisma: siPrisma,
+  Git: siGit,
+  GitHub: siGithub,
+  Postman: siPostman,
+  NPM: siNpm,
+  Docker: siDocker,
+  Jest: siJest,
+  "React Testing Library": siTestinglibrary,
+};
 
 const skillGroups = [
   {
@@ -67,17 +110,29 @@ export default function Skills() {
             <H3 className="mb-5">{group.title}</H3>
 
             <ul className="grid grid-cols-3 gap-x-4 gap-y-8 sm:grid-cols-4 md:grid-cols-3 lg:grid-cols-4">
-              {Object.entries(group.skills).map(([skill, logo]) => (
+              {Object.keys(group.skills).map((skill) => (
                 <li
                   key={skill}
-                  className="flex min-w-0 flex-col items-center text-center text-sm"
+                  className="group flex min-w-0 flex-col items-center text-center text-sm"
                 >
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center">
-                    <img
-                      src={logoMap[logo]}
-                      alt={`${skill} logo`}
-                      className="h-full w-full object-contain"
-                    />
+                  <span className="relative flex h-10 w-10 shrink-0 items-center justify-center">
+                    {technologyIcons[skill] ? (
+                      <svg
+                        role="img"
+                        aria-label={`${skill} logo`}
+                        viewBox="0 0 24 24"
+                        className="h-full w-full fill-theme transition-colors duration-200 group-hover:fill-[var(--official-colour)]"
+                        style={{ "--official-colour": `#${technologyIcons[skill].hex}` }}
+                      >
+                        <path d={technologyIcons[skill].path} />
+                      </svg>
+                    ) : (
+                      <img
+                        src={vscodeLogo}
+                        alt={`${skill} logo`}
+                        className="skill-logo h-full w-full object-contain transition duration-200 group-hover:filter-none"
+                      />
+                    )}
                   </span>
                   <span className="mt-2 w-full text-sm font-light leading-tight">
                     {skill}
