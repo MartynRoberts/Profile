@@ -123,7 +123,7 @@ export default function Experience() {
                 />
 
                 <div>
-                  <h3 className="text-xl font-bold text-slate-950">
+                  <h3 className="mb-2 text-xl font-bold leading-tight text-slate-950">
                     {role.title}
                   </h3>
                   <p className="text-slate-700 text-lg">
