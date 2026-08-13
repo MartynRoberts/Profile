@@ -113,7 +113,7 @@ export default function Experience() {
           {roles.map((role) => (
             <li
               key={`${role.company}-${role.dates}`}
-              className="relative border-b border-slate-200 py-6 transition sm:rounded-2xl sm:border sm:p-6"
+              className="relative border-b border-slate-200 py-6 transition sm:rounded-xl sm:border sm:p-6"
             >
               <div className="flex gap-5">
                 <img

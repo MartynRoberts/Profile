@@ -14,7 +14,7 @@ export default function Input({ label, id, ...props }) {
         {...props}
         type={props.type || "text"}
         placeholder={props.placeholder || ""}
-        className="w-full rounded-xl outline-none transition placeholder:text-slate-400 focus:border-blue-400 focus:ring-4 focus:ring-blue-400/20 text-slate-900 bg-slate-100 px-4 py-3 rounded"
+        className="w-full rounded-lg bg-slate-100 px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-blue-400 focus:ring-4 focus:ring-blue-400/20"
       />
     </div>
   );
