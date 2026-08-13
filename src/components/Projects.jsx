@@ -1,6 +1,8 @@
 import { H2 } from "./UI/Header";
 import Section from "./UI/Section";
 import ProjectGallery from "./ProjectGallery";
+import { useEffect, useRef } from "react";
+import { trackEvent } from "../utils/analytics";
 
 function ExternalLinkIcon() {
   return (
@@ -99,8 +101,30 @@ const projects = [
 ];
 
 export default function Projects() {
+  const sectionRef = useRef(null);
+  const hasTrackedView = useRef(false);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasTrackedView.current) {
+          hasTrackedView.current = true;
+          trackEvent("Projects Section Viewed");
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.25 },
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <Section id="projects" className="px-3 sm:px-6">
+    <Section id="projects" className="px-3 sm:px-6" ref={sectionRef}>
       <div className="mx-auto max-w-6xl">
         <H2 className="mb-8 sm:mb-12">Projects</H2>
 
@@ -122,6 +146,11 @@ export default function Projects() {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() =>
+                        trackEvent("Live Project Visited", {
+                          project: project.title,
+                        })
+                      }
                       className="inline-flex items-center gap-2 rounded-lg bg-slate-950 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 active:scale-[0.98] active:bg-slate-900"
                     >
                       View live project

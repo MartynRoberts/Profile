@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { trackEvent } from "../utils/analytics";
 
 function ArrowIcon({ direction }) {
   return (
@@ -48,11 +49,31 @@ export default function ProjectGallery({ media, title }) {
   }, [lightboxOpen]);
 
   function showPrevious() {
-    setActiveIndex((current) => (current - 1 + media.length) % media.length);
+    selectMedia((activeIndex - 1 + media.length) % media.length, "previous");
   }
 
   function showNext() {
-    setActiveIndex((current) => (current + 1) % media.length);
+    selectMedia((activeIndex + 1) % media.length, "next");
+  }
+
+  function selectMedia(index, method) {
+    const item = media[index];
+    setActiveIndex(index);
+    trackEvent("Gallery Media Selected", {
+      project: title,
+      media: item.caption || `Media ${index + 1}`,
+      type: item.type,
+      method,
+    });
+  }
+
+  function openLightbox() {
+    setLightboxOpen(true);
+    trackEvent("Gallery Media Enlarged", {
+      project: title,
+      media: activeItem.caption || `Media ${activeIndex + 1}`,
+      type: activeItem.type,
+    });
   }
 
   return (
@@ -66,14 +87,14 @@ export default function ProjectGallery({ media, title }) {
 
         <div
           className="group relative aspect-[36/25] cursor-zoom-in overflow-hidden bg-slate-950 transition hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 active:brightness-90"
-          onClick={() => setLightboxOpen(true)}
+          onClick={openLightbox}
           role="button"
           tabIndex="0"
           aria-label={`Enlarge ${activeItem.caption || title}`}
           onKeyDown={(event) => {
             if (event.key === "Enter" || event.key === " ") {
               event.preventDefault();
-              setLightboxOpen(true);
+              openLightbox();
             }
           }}
         >
@@ -141,7 +162,7 @@ export default function ProjectGallery({ media, title }) {
             <button
               key={item.src}
               type="button"
-              onClick={() => setActiveIndex(index)}
+              onClick={() => selectMedia(index, "thumbnail")}
               aria-label={`Show ${item.caption || `${title} media ${index + 1}`}`}
               aria-pressed={index === activeIndex}
               className={`relative w-24 shrink-0 snap-start overflow-hidden rounded-lg border-2 bg-slate-100 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 active:translate-y-0 active:scale-[0.97] ${

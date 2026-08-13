@@ -3,6 +3,7 @@ import { H2 } from "./UI/Header";
 import Section from "./UI/Section";
 
 import { useState } from "react";
+import { trackEvent } from "../utils/analytics";
 
 export default function Contact() {
   const [status, setStatus] = useState("idle");
@@ -28,6 +29,7 @@ export default function Contact() {
     const result = await response.json();
 
     if (result.success) {
+      trackEvent("Contact Form Submitted", { result: "success" });
       setStatus("success");
       e.target.reset();
     } else {
