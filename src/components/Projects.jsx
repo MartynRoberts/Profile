@@ -1,9 +1,38 @@
 import { H2 } from "./UI/Header";
 import Section from "./UI/Section";
+import ProjectGallery from "./ProjectGallery";
 
 const projects = [
   {
-    thumbnail: "thumbnail_td.jpg",
+    media: [
+      {
+        type: "image",
+        src: "/projects/transfer-dashboard/leagues.png",
+        alt: "Transfer Dashboard leagues page showing Europe's top five leagues and spending rankings",
+        caption:
+          "Compare football club finances, squads, injuries and discipline",
+      },
+      {
+        type: "video",
+        src: "/projects/transfer-dashboard/analytics-demo.webm",
+        poster: "/projects/transfer-dashboard/overview.png",
+        alt: "Transfer Dashboard navigating between overview, club spending, transfer value and record fee analytics",
+        caption: "Explore interactive transfer and spending analytics",
+      },
+      {
+        type: "image",
+        src: "/projects/transfer-dashboard/arsenal.png",
+        alt: "Arsenal club dashboard showing squad statistics, net spend and incoming transfers",
+        caption: "Detailed club spending and squad insights",
+      },
+      {
+        type: "video",
+        src: "/projects/transfer-dashboard/mobile-demo.webm",
+        poster: "/projects/transfer-dashboard/mobile-demo-poster.png",
+        alt: "Transfer Dashboard mobile navigation and responsive league analytics demonstration",
+        caption: "Responsive navigation and analytics on mobile",
+      },
+    ],
     title: "Transfer Dashboard",
     link: "https://football-transfer-dashboard.vercel.app/",
     repo: "https://github.com/MartynRoberts/football-transfer-dashboard",
@@ -44,11 +73,7 @@ export default function Projects() {
               className="relative overflow-hidden rounded-xl border border-slate-200 p-3 transition sm:rounded-2xl sm:p-6"
             >
               <div className="flex min-w-0 flex-col gap-4 sm:gap-6 lg:flex-row lg:gap-8">
-                <img
-                  src={project.thumbnail}
-                  alt={`${project.title} thumbnail`}
-                  className="h-auto w-full self-start rounded-xl lg:w-90 lg:shrink-0"
-                />
+                <ProjectGallery media={project.media} title={project.title} />
 
                 <div className="min-w-0 flex-1">
                   <h3 className="text-xl font-bold text-slate-950">
