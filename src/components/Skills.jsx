@@ -6,13 +6,13 @@ const skillGroups = [
   {
     title: "Front-end",
     skills: {
-      HTML: "html.svg",
-      CSS: "css.svg",
-      SASS: "sass.svg",
-      "Tailwind CSS": "tailwind.svg",
-      JavaScript: "javascript.svg",
       React: "react.svg",
       "Next.js": "nextjs.svg",
+      JavaScript: "javascript.svg",
+      "Tailwind CSS": "tailwind.svg",
+      SASS: "sass.svg",
+      CSS: "css.svg",
+      HTML: "html.svg",
     },
   },
   {
@@ -76,7 +76,9 @@ export default function Skills() {
                       className="h-full w-full object-contain"
                     />
                   </span>
-                  <span className="truncate text-lg font-medium">{skill}</span>
+                  <span className="truncate text-md font-light mt-1">
+                    {skill}
+                  </span>
                 </li>
               ))}
             </ul>
