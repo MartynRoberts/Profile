@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+@theme {
+  --color-theme: #55a178;
+  --color-theme-hover: #478b67;
+  --color-theme-dark: #326a4c;
+  --color-theme-soft: #e8f3ed;
+}
+
 @font-face {
   font-family: "Inter";
   src: url("/fonts/inter-variable.woff2") format("woff2");
