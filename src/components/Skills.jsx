@@ -66,11 +66,11 @@ export default function Skills() {
           >
             <H3 className="mb-5">{group.title}</H3>
 
-            <ul className="flex flex-wrap gap-10">
+            <ul className="grid grid-cols-3 gap-x-4 gap-y-8 sm:grid-cols-4 md:grid-cols-3 lg:grid-cols-4">
               {Object.entries(group.skills).map(([skill, logo]) => (
                 <li
                   key={skill}
-                  className="rounded-full text-sm flex flex-col items-center"
+                  className="flex min-w-0 flex-col items-center text-center text-sm"
                 >
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center">
                     <img
@@ -79,7 +79,7 @@ export default function Skills() {
                       className="h-full w-full object-contain"
                     />
                   </span>
-                  <span className="truncate text-md font-light mt-1">
+                  <span className="mt-2 w-full text-sm font-light leading-tight">
                     {skill}
                   </span>
                 </li>
