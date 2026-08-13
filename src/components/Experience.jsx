@@ -109,11 +109,11 @@ export default function Experience() {
       <div className="mx-auto max-w-6xl">
         <H2 className="mb-12">Experience</H2>
 
-        <ul className="relative space-y-6">
+        <ul className="relative sm:space-y-6">
           {roles.map((role) => (
             <li
               key={`${role.company}-${role.dates}`}
-              className="relative rounded-2xl border border-slate-200 p-6 transition"
+              className="relative border-b border-slate-200 py-6 transition sm:rounded-2xl sm:border sm:p-6"
             >
               <div className="flex gap-5">
                 <img
@@ -135,11 +135,11 @@ export default function Experience() {
                   <p className="mt-6 text-md font-medium">
                     {role.dates} · {role.duration}
                   </p>
-                  <ul className="mt-6 space-y-2">
-                    {role.details.map((detail, index) => (
+                  <ul className="mt-6 space-y-2 pl-5">
+                    {role.details.map((detail) => (
                       <li
-                        key={index}
-                        className="text-md text-slate-600 list-disc"
+                        key={detail}
+                        className="text-md list-disc text-slate-600"
                       >
                         {detail}
                       </li>

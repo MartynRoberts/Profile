@@ -66,11 +66,11 @@ export default function Projects() {
       <div className="mx-auto max-w-6xl">
         <H2 className="mb-8 sm:mb-12">Projects</H2>
 
-        <ul className="relative space-y-6">
+        <ul className="relative sm:space-y-6">
           {projects.map((project) => (
             <li
               key={project.title}
-              className="relative overflow-hidden rounded-xl border border-slate-200 p-3 transition sm:rounded-2xl sm:p-6"
+              className="relative overflow-hidden border-b border-slate-200 py-6 transition sm:rounded-2xl sm:border sm:p-6"
             >
               <div className="flex min-w-0 flex-col gap-4 sm:gap-6 lg:flex-row lg:gap-8">
                 <ProjectGallery media={project.media} title={project.title} />
