@@ -49,11 +49,26 @@ export default function About() {
           for.
         </p>
       </div>
-      <img
-        src={profileImage}
-        alt="Profile"
-        className="order-1 sm:order-none sm:col-start-2 sm:row-start-2 m-auto w-full  max-w-60 md:max-w-90 sm:m-0"
-      />
+      <div className="order-1 m-auto flex w-full max-w-60 flex-col gap-4 sm:order-none sm:col-start-2 sm:row-start-2 sm:m-0 md:max-w-90">
+        <img src={profileImage} alt="Profile" className="h-auto w-full" />
+        <a
+          href="/martyn-roberts-cv.pdf"
+          download="Martyn Roberts CV.pdf"
+          className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-slate-950 px-5 py-3 text-base font-semibold leading-none text-white transition hover:bg-slate-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
+        >
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 20 20"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            className="h-5 w-5"
+          >
+            <path d="M10 3v10m0 0 4-4m-4 4L6 9M4 17h12" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+          Download CV
+        </a>
+      </div>
     </Section>
   );
 }
