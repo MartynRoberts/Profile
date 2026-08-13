@@ -33,24 +33,24 @@ const projects = [
 
 export default function Projects() {
   return (
-    <Section id="projects">
+    <Section id="projects" className="px-3 sm:px-6">
       <div className="mx-auto max-w-6xl">
-        <H2 className="mb-12">Projects</H2>
+        <H2 className="mb-8 sm:mb-12">Projects</H2>
 
         <ul className="relative space-y-6">
           {projects.map((project) => (
             <li
-              key={`${project.title}`}
-              className="relative rounded-2xl border border-slate-200 p-6 transition"
+              key={project.title}
+              className="relative overflow-hidden rounded-xl border border-slate-200 p-3 transition sm:rounded-2xl sm:p-6"
             >
-              <div className="flex gap-5">
+              <div className="flex min-w-0 flex-col gap-4 sm:gap-6 lg:flex-row lg:gap-8">
                 <img
                   src={project.thumbnail}
                   alt={`${project.title} thumbnail`}
-                  className="w-90 h-60 mr-8"
+                  className="h-auto w-full self-start rounded-xl lg:w-90 lg:shrink-0"
                 />
 
-                <div>
+                <div className="min-w-0 flex-1">
                   <h3 className="text-xl font-bold text-slate-950">
                     {project.title}
                   </h3>
@@ -64,7 +64,7 @@ export default function Projects() {
                       View Project
                     </a>
                   )}
-                  <ul className="mt-6 space-y-2">
+                  <ul className="mt-5 space-y-2 pl-5 sm:mt-6">
                     {project.details.map((detail, index) => (
                       <li
                         key={index}
@@ -79,18 +79,18 @@ export default function Projects() {
                       href={project.repo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-500 hover:underline mt-4 block"
+                      className="mt-4 block break-all text-blue-500 hover:underline"
                     >
-                      {project.repo}
+                      View source on GitHub
                     </a>
                   )}
                   {project.technologies && (
-                    <div className="mt-6">
+                    <div className="mt-5 sm:mt-6">
                       <div className="flex flex-wrap gap-2">
                         {project.technologies.map((tech, index) => (
                           <span
                             key={index}
-                            className="text-sm rounded-full px-4 py-2 text-md border"
+                            className="rounded-full border px-3 py-1.5 text-sm sm:px-4 sm:py-2"
                           >
                             {tech}
                           </span>
