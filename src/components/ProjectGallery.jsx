@@ -24,12 +24,15 @@ export default function ProjectGallery({ media, title }) {
   const hasMultipleItems = media.length > 1;
 
   useEffect(() => {
-    const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const motionPreference = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    );
     const updatePreference = () => setReduceMotion(motionPreference.matches);
 
     updatePreference();
     motionPreference.addEventListener("change", updatePreference);
-    return () => motionPreference.removeEventListener("change", updatePreference);
+    return () =>
+      motionPreference.removeEventListener("change", updatePreference);
   }, []);
 
   useEffect(() => {
@@ -79,14 +82,17 @@ export default function ProjectGallery({ media, title }) {
   return (
     <div className="min-w-0 lg:w-[46%] lg:shrink-0 xl:w-[48%]">
       <figure className="overflow-hidden rounded-xl border border-slate-200 bg-slate-100 shadow-sm">
-        <div className="flex h-7 items-center gap-1.5 border-b border-slate-200 bg-white px-3" aria-hidden="true">
+        <div
+          className="flex h-7 items-center gap-1.5 border-b border-slate-200 bg-white px-3"
+          aria-hidden="true"
+        >
           <span className="h-2 w-2 rounded-full bg-red-400" />
           <span className="h-2 w-2 rounded-full bg-amber-400" />
           <span className="h-2 w-2 rounded-full bg-emerald-400" />
         </div>
 
         <div
-          className="group relative aspect-[36/25] cursor-zoom-in overflow-hidden bg-slate-950 transition hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 active:brightness-90"
+          className="group relative aspect-[36/25] cursor-zoom-in overflow-hidden bg-slate-950 transition hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-theme active:brightness-90"
           onClick={openLightbox}
           role="button"
           tabIndex="0"
@@ -157,7 +163,10 @@ export default function ProjectGallery({ media, title }) {
       </figure>
 
       {hasMultipleItems && (
-        <div className="mt-3 flex snap-x gap-2 overflow-x-auto pb-2" aria-label={`${title} media gallery`}>
+        <div
+          className="mt-3 flex snap-x gap-2 overflow-x-auto pb-2"
+          aria-label={`${title} media gallery`}
+        >
           {media.map((item, index) => (
             <button
               key={item.src}
@@ -165,8 +174,10 @@ export default function ProjectGallery({ media, title }) {
               onClick={() => selectMedia(index, "thumbnail")}
               aria-label={`Show ${item.caption || `${title} media ${index + 1}`}`}
               aria-pressed={index === activeIndex}
-              className={`relative w-24 shrink-0 snap-start overflow-hidden rounded-lg border-2 bg-slate-100 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 active:translate-y-0 active:scale-[0.97] ${
-                index === activeIndex ? "border-blue-500" : "border-transparent opacity-70 hover:opacity-100"
+              className={`relative w-24 shrink-0 snap-start overflow-hidden rounded-lg border-2 bg-slate-100 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-theme active:translate-y-0 active:scale-[0.97] ${
+                index === activeIndex
+                  ? "border-theme"
+                  : "border-transparent opacity-70 hover:opacity-100"
               }`}
             >
               <img
@@ -175,7 +186,10 @@ export default function ProjectGallery({ media, title }) {
                 className="aspect-video w-full object-cover"
               />
               {item.type === "video" && (
-                <span className="absolute inset-0 grid place-items-center bg-slate-950/25 text-lg text-white" aria-hidden="true">
+                <span
+                  className="absolute inset-0 grid place-items-center bg-slate-950/25 text-lg text-white"
+                  aria-hidden="true"
+                >
                   ▶
                 </span>
               )}

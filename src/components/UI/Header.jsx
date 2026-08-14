@@ -9,9 +9,5 @@ export function H2({ children, className = "" }) {
 }
 
 export function H3({ children, className = "" }) {
-  return (
-    <h3 className={`text-xl font-bold text-theme ${className}`}>
-      {children}
-    </h3>
-  );
+  return <h3 className={`text-xl font-bold ${className}`}>{children}</h3>;
 }
