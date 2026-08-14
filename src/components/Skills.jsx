@@ -107,7 +107,7 @@ export default function Skills() {
             key={group.title}
             className="relative border-b border-slate-200 py-6 transition sm:rounded-xl sm:border sm:p-6"
           >
-            <H3 className="mb-5">{group.title}</H3>
+            <H3 className="mb-5 text">{group.title}</H3>
 
             <ul className="grid grid-cols-3 gap-x-4 gap-y-8 sm:grid-cols-4 md:grid-cols-3 lg:grid-cols-4">
               {Object.keys(group.skills).map((skill) => (
@@ -122,7 +122,9 @@ export default function Skills() {
                         aria-label={`${skill} logo`}
                         viewBox="0 0 24 24"
                         className="h-full w-full fill-theme transition-colors duration-200 group-hover:fill-[var(--official-colour)]"
-                        style={{ "--official-colour": `#${technologyIcons[skill].hex}` }}
+                        style={{
+                          "--official-colour": `#${technologyIcons[skill].hex}`,
+                        }}
                       >
                         <path d={technologyIcons[skill].path} />
                       </svg>

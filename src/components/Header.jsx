@@ -34,7 +34,7 @@ export default function Header() {
 
         <button
           type="button"
-          className="grid h-11 w-11 shrink-0 place-items-center rounded-lg border border-slate-300 text-slate-900 transition hover:bg-slate-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 lg:hidden"
+          className="grid h-11 w-11 shrink-0 place-items-center rounded-lg border border-slate-300 text-slate-900 transition hover:bg-slate-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-theme lg:hidden"
           aria-label={
             menuOpen ? "Close main navigation" : "Open main navigation"
           }
@@ -84,7 +84,7 @@ export default function Header() {
             {navigation.map(([label, href]) => (
               <li key={href}>
                 <a
-                  className="block rounded-lg px-3 py-3 transition hover:bg-slate-100 focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-blue-500"
+                  className="block rounded-lg px-3 py-3 transition hover:bg-slate-100 focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-theme"
                   href={href}
                   onClick={() => setMenuOpen(false)}
                 >

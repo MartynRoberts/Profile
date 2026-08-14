@@ -52,7 +52,7 @@ export default function Contact() {
               href="https://github.com/MartynRoberts"
               target="_blank"
               rel="noopener noreferrer me"
-              className="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-4 py-2.5 font-semibold text-slate-900 shadow-sm transition hover:border-slate-400 hover:bg-slate-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 active:scale-[0.98] active:bg-slate-100"
+              className="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-4 py-2.5 font-semibold text-slate-900 shadow-sm transition hover:border-slate-400 hover:bg-slate-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-theme active:scale-[0.98] active:bg-slate-100"
             >
               <svg
                 aria-hidden="true"
@@ -68,7 +68,7 @@ export default function Contact() {
               href="https://www.linkedin.com/in/moroberts/"
               target="_blank"
               rel="noopener noreferrer me"
-              className="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-4 py-2.5 font-semibold text-slate-900 shadow-sm transition hover:border-slate-400 hover:bg-slate-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 active:scale-[0.98] active:bg-slate-100"
+              className="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-4 py-2.5 font-semibold text-slate-900 shadow-sm transition hover:border-slate-400 hover:bg-slate-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-theme active:scale-[0.98] active:bg-slate-100"
             >
               <svg
                 aria-hidden="true"
@@ -100,7 +100,7 @@ export default function Contact() {
                 Message
               </label>
               <textarea
-                className="w-full resize-none rounded-lg bg-slate-100 px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-blue-400 focus:ring-4 focus:ring-blue-400/20"
+                className="w-full resize-none rounded-lg bg-slate-100 px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-theme focus:ring-4 focus:ring-theme/20"
                 id="message"
                 name="message"
                 rows="5"
