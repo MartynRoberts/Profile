@@ -98,6 +98,62 @@ const projects = [
       "Vercel",
     ],
   },
+  {
+    media: [
+      {
+        type: "image",
+        src: "/projects/ministore/storefront.png",
+        alt: "MiniStore homepage with its storefront hero and product category navigation",
+        caption: "Discover products in a responsive ecommerce storefront",
+      },
+      {
+        type: "video",
+        src: "/projects/ministore/shopping-demo.webm",
+        poster: "/projects/ministore/catalogue.png",
+        alt: "MiniStore desktop demonstration browsing the catalogue and opening a product detail page",
+        caption: "Browse the catalogue and explore product details",
+      },
+      {
+        type: "image",
+        src: "/projects/ministore/product.png",
+        alt: "MiniStore product page showing product imagery, pricing and purchasing options",
+        caption: "Detailed product information and shopping controls",
+      },
+      {
+        type: "video",
+        src: "/projects/ministore/mobile-demo.webm",
+        poster: "/projects/ministore/mobile-demo-poster.png",
+        alt: "MiniStore mobile demonstration navigating from the storefront to the catalogue and a product page",
+        caption: "Responsive product discovery and browsing on mobile",
+      },
+    ],
+    title: "MiniStore",
+    link: "https://ministore-eight.vercel.app/",
+    repo: "https://github.com/MartynRoberts/ministore",
+    caseStudy: "https://github.com/MartynRoberts/ministore#readme",
+    details: [
+      "Built a responsive full-stack ecommerce demo with product discovery, favourites, a persistent basket and simulated checkout.",
+      "Developed server-driven catalogue search with debounced suggestions, category filters, sorting, pagination and shareable URLs.",
+      "Created detailed product pages with image galleries, reviews, product variants and related recommendations.",
+      "Implemented server-calculated pricing, delivery options and transactional stock reservations, with validated checkout and safe payment retries.",
+      "Built session-scoped order history and a protected admin workspace for order lifecycle and inventory management.",
+      "Normalized DummyJSON product data behind a stable application contract, with a local browsing fallback and SQLite persistence.",
+      "Created reusable, accessible UI components and automated domain, API and component tests, with deployment to Vercel through GitHub Actions.",
+    ],
+    technologies: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Node.js",
+      "SQLite",
+      "DummyJSON API",
+      "Jest",
+      "React Testing Library",
+      "GitHub Actions",
+      "Vercel",
+    ],
+  },
 ];
 
 export default function Projects() {
