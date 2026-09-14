@@ -39,12 +39,9 @@ export default function About() {
         </p>
         <p>
           I was the trusted backbone of a successful ecommerce front-end
-          development team for 10+ years (with the references to back it up) and
-          have a track record of delivering results.
-        </p>
-        <p>
-          If you are looking for someone who takes pride in the quality of their
-          finished product, is a strong communicator, professional, and
+          development team for 10+ years and have a track record of delivering
+          results. If you are looking for someone who takes pride in the quality
+          of their finished product, is a strong communicator, professional, and
           easy-going, then I might just be the new team member you're looking
           for.
         </p>
