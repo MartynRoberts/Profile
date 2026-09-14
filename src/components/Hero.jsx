@@ -20,7 +20,7 @@ export default function Hero() {
             href="#projects"
             className="inline-flex items-center justify-center rounded-lg bg-theme px-5 py-3 font-semibold text-white shadow-sm transition hover:bg-theme-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-theme-dark active:scale-[0.98] active:bg-theme-dark active:text-white"
           >
-            View featured project
+            View projects
           </a>
           <a
             href="#contact"
