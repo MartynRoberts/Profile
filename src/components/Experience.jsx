@@ -115,11 +115,11 @@ export default function Experience() {
               key={`${role.company}-${role.dates}`}
               className="relative border-b border-slate-200 py-6 transition sm:rounded-xl sm:border sm:p-6"
             >
-              <div className="flex gap-5">
+              <div className="flex flex-col gap-4 sm:flex-row sm:gap-5">
                 <img
                   src={logoMap[role.logo]}
                   alt={`${role.company} logo`}
-                  className="h-12 w-12 rounded-full"
+                  className="h-12 w-12 rounded-full sm:self-start"
                 />
 
                 <div>
