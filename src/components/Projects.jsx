@@ -191,10 +191,11 @@ export default function Projects() {
               className="relative overflow-hidden border-b border-slate-200 py-6 transition sm:rounded-xl sm:border sm:p-6"
             >
               <div className="flex min-w-0 flex-col gap-4 sm:gap-6 lg:flex-row lg:gap-8">
+                <h3 className="text-xl font-bold">{project.title}</h3>
+
                 <ProjectGallery media={project.media} title={project.title} />
 
                 <div className="min-w-0 flex-1">
-                  <h3 className="text-xl font-bold">{project.title}</h3>
                   <div className="mt-4 flex flex-wrap gap-2">
                     <a
                       href={project.link}

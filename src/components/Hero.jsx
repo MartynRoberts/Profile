@@ -15,10 +15,10 @@ export default function Hero() {
           requirements and data into clear, intuitive interfaces.
         </p>
 
-        <div className="mt-8 flex flex-wrap gap-3">
+        <div className="mt-8 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap">
           <a
             href="#projects"
-            className="inline-flex items-center justify-center rounded-lg bg-theme px-5 py-3 font-semibold text-white shadow-sm transition hover:bg-theme-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-theme-dark active:scale-[0.98] active:bg-theme-dark active:text-white"
+            className="col-span-2 inline-flex items-center justify-center rounded-lg bg-theme px-5 py-3 font-semibold text-white shadow-sm transition hover:bg-theme-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-theme-dark active:scale-[0.98] active:bg-theme-dark active:text-white sm:col-span-1"
           >
             View projects
           </a>
