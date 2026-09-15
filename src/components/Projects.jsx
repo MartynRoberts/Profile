@@ -45,6 +45,12 @@ const projects = [
     media: [
       {
         type: "image",
+        src: "/projects/transfer-dashboard/homepage.png",
+        alt: "Transfer Dashboard homepage introducing football transfer activity, squad valuations and league analytics",
+        caption: "Explore football transfer data and analytics",
+      },
+      {
+        type: "image",
         src: "/projects/transfer-dashboard/leagues.png",
         alt: "Transfer Dashboard leagues page showing Europe's top five leagues and spending rankings",
         caption:
