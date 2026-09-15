@@ -196,13 +196,15 @@ export default function Projects() {
               key={project.title}
               className="relative overflow-hidden border-b border-slate-200 py-6 transition sm:rounded-xl sm:border sm:p-6"
             >
-              <div className="flex min-w-0 flex-col gap-4 sm:gap-6 lg:flex-row lg:gap-8">
-                <h3 className="text-xl font-bold">{project.title}</h3>
+              <h3 className="mb-4 text-xl font-bold sm:mb-6">
+                {project.title}
+              </h3>
 
+              <div className="flex min-w-0 flex-col gap-4 sm:gap-6 lg:flex-row lg:gap-8">
                 <ProjectGallery media={project.media} title={project.title} />
 
                 <div className="min-w-0 flex-1">
-                  <div className="mt-4 flex flex-wrap gap-2">
+                  <div className="mt-4 grid grid-cols-1 gap-2 min-[360px]:grid-cols-2 sm:flex sm:flex-wrap lg:mt-0">
                     <a
                       href={project.link}
                       target="_blank"
@@ -212,7 +214,7 @@ export default function Projects() {
                           project: project.title,
                         })
                       }
-                      className="inline-flex items-center gap-2 rounded-lg bg-theme px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-theme-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-theme-dark active:scale-[0.98] active:bg-theme-dark active:text-white"
+                      className="inline-flex min-w-0 items-center justify-center gap-2 whitespace-nowrap rounded-lg bg-theme px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-theme-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-theme-dark active:scale-[0.98] active:bg-theme-dark active:text-white"
                     >
                       View live project
                       <ExternalLinkIcon />
@@ -221,7 +223,7 @@ export default function Projects() {
                       href={project.repo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm font-semibold text-slate-900 shadow-sm transition hover:border-slate-400 hover:bg-slate-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-theme active:scale-[0.98] active:bg-slate-100"
+                      className="inline-flex min-w-0 items-center justify-center gap-2 whitespace-nowrap rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm font-semibold text-slate-900 shadow-sm transition hover:border-slate-400 hover:bg-slate-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-theme active:scale-[0.98] active:bg-slate-100"
                     >
                       <GitHubIcon />
                       View source
